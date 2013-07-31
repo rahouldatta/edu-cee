@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  institution_id: 1
+  subject: MyString
+  chapter: MyString
+  total_marks: 1
+  total_time: 1
+
+two:
+  institution_id: 1
+  subject: MyString
+  chapter: MyString
+  total_marks: 1
+  total_time: 1

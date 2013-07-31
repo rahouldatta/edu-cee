@@ -7,6 +7,10 @@ gem 'rails', '3.2.11'
 
 gem 'mysql2'
 
+#functionality supporting gems
+gem 'devise'
+gem 'will_paginate', '~> 3.0'
+gem 'acts_as_commentable', '3.0.1'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  examination_id: 1
+  question: MyText
+  correct_answer: MyString
+  incorrect_answers: MyText
+  answer_tat: 1.5
+  difficulty_level: 1
+
+two:
+  examination_id: 1
+  question: MyText
+  correct_answer: MyString
+  incorrect_answers: MyText
+  answer_tat: 1.5
+  difficulty_level: 1
