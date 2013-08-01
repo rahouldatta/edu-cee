@@ -17,7 +17,7 @@ class Institution < ActiveRecord::Base
     teachers = Teacher.where(:institution_id => nil)
     names = []
     teachers.each do |t|
-      names << "#{t.id }. #{t.first_name} #{t.last_name}"
+      names << "#{t.first_name} #{t.last_name} (#{t.id})"
     end
     names
   end

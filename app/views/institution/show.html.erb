@@ -1,15 +1,19 @@
 <h1>Institution, <%= "#{@institution.institution_name.titleize}"%></h1>
 
 <%= @institution.inspect%>
+<br>
+<br>
 <%= @institution.email %>&nbsp;LOGGED IN -----
 <br>
+<hr>
 <br>
 <% if @teacher_enrolled.blank?%>
     You have not enrolled any teachers into your institution yet.
 <% else %>
     Teachers enrolled in your institute are -<br>
-    <% @teacher_enrolled.each_with_index do |t,i|%>
-        <%= "#{i+1}. #{t.first_name} #{t.last_name}"%><br>
+    <% @teacher_enrolled.each do |t|%>
+        <%= "#{t.id}. #{t.first_name} #{t.last_name}"%>&nbsp;|&nbsp;
+        <%= link_to "Remove", remove_teacher_from_institution_institution_path(t), :confirm => "Are you sure you want to remove this teacher from your institution?"%><br>
     <% end%>
 <% end%>
 
@@ -24,6 +28,7 @@ Add more teachers to your institute -
 <% end %>
 
 <br>
+<hr>
 <br>
 <%= link_to destroy_member_session_path, :method=>'delete' do %><i class="icon-warning-sign"></i> Logout<% end %>
 
