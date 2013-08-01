@@ -4,8 +4,7 @@
     <%= current_member.email %>&nbsp;LOGGED IN -----
 <%= link_to destroy_member_session_path, :method=>'delete' do %><i class="icon-warning-sign"></i> Logout<% end %>
 <% else%>
-    NOT LOGGED IN
-    <h2>Sign in</h2>
+    <h2>Sign in as Teacher or Student</h2>
 
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
         <div><%= f.label :email %><br />
@@ -23,5 +22,10 @@
            <br>
            <br>
     <%= render "devise/shared/links" %>
+
+    <br>
+    <br>
+    <%= link_to "Sign in for Institutions", new_session_path("institution") %><br />
+    <%= link_to "Sign up for new Institution", new_registration_path("institution") %><br />
 
 <% end %>

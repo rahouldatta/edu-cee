@@ -1,5 +1,7 @@
 EduCee::Application.routes.draw do
 
+  devise_for :institutions
+
   resources :student
   resources :teacher
 

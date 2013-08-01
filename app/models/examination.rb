@@ -3,5 +3,6 @@ class Examination < ActiveRecord::Base
 
   #============================== Associations ==============================
   has_many :questions
+  belongs_to :institution
 
 end #class Examination

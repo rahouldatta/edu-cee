@@ -1,4 +1,9 @@
-<h2>Sign up</h2>
+
+<% if resource.class.to_s.eql? "Member" %>
+    <h2>Sign up for Teacher or Student</h2>
+<% elsif resource.class.to_s.eql? "Institution" %>
+    <h2>Sign up for Institution</h2>
+<% end %>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -9,13 +14,59 @@
   <div><%= f.label :password %><br />
   <%= f.password_field :password %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+    <div><%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %></div>
+    <br>
 
-  <div><%= f.label :member_type %><br />
-  <%= f.text_field :type %></div>
+
+  <% if resource.class.to_s.eql? "Member" %>
+
+    <div><%= f.label :first_name %><br />
+      <%= f.text_field :first_name%></div>
+    <div><%= f.label :last_name %><br />
+      <%= f.text_field :last_name%></div>
+    <div><%= f.label :qualifications %><br />
+      <%= f.text_field :qualifications %></div>
+    <div><%= f.label :age %><br />
+      <%= f.text_field :age %></div>
+    <div><%= f.label :institution_specific_id %><br />
+      <%= f.text_field :institution_specific_id %></div>
+
+    <div><%= f.label :member_type %><br />
+  <%= f.select :type, ["Student", "Teacher"] %></div>
+
+
+
+
+   <% elsif resource.class.to_s.eql? "Institution" %>
+
+        <div><%= f.label :institution_name %><br />
+          <%= f.text_field :institution_name%></div>
+        <div><%= f.label :institution_address %><br />
+          <%= f.text_field :institution_address%></div>
+        <div><%= f.label :institute_contact_details %><br />
+          <%= f.text_field :institute_contact_details %></div>
+        <div><%= f.label :institution_board %><br />
+          <%= f.text_field :institution_board %></div>
+        <div><%= f.label :institute_description %><br />
+          <%= f.text_field :institute_description %></div>
+
+    <% end %>
+
+
+
+
+
+
+    <br>
+    <br>
 
     <div><%= f.submit "Sign up" %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<br>
+<br>
+<br>
+<%= link_to "HOME", root_path%>
