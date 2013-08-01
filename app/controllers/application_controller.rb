@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
       student_path(resource)
     elsif resource.class.to_s.eql? "Teacher"
       teacher_path(resource)
+    elsif resource.class.to_s.eql? "Institution"
+      institution_path(resource)
     else
       root_path
     end

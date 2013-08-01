@@ -1,9 +1,17 @@
 EduCee::Application.routes.draw do
 
+  get "institution/show"
+
   devise_for :institutions
 
   resources :student
   resources :teacher
+
+  resources :institution do
+    collection do
+      post 'add_teacher_to_institute'
+    end
+  end
 
   get "home/index"
 

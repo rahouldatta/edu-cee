@@ -5,11 +5,21 @@ class Institution < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :institution_name, :institution_address, :institute_contact_details, :institution_board, :institute_description
 
   #============================== Associations ==============================
   has_many :teachers
   has_many :students
   has_many :examinations
+
+
+  def self.get_available_teachers_info
+    teachers = Teacher.where(:institution_id => nil)
+    names = []
+    teachers.each do |t|
+      names << "#{t.id }. #{t.first_name} #{t.last_name}"
+    end
+    names
+  end
 
 end #class Institution
