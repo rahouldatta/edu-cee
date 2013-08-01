@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130731195408) do
+ActiveRecord::Schema.define(:version => 20130801145656) do
 
   create_table "examinations", :force => true do |t|
     t.integer  "institution_id"
@@ -22,6 +22,29 @@ ActiveRecord::Schema.define(:version => 20130731195408) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
+
+  create_table "members", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "type"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "age"
+    t.string   "qualifications"
+  end
+
+  add_index "members", ["email"], :name => "index_members_on_email", :unique => true
+  add_index "members", ["reset_password_token"], :name => "index_members_on_reset_password_token", :unique => true
 
   create_table "questions", :force => true do |t|
     t.integer  "examination_id"

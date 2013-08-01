@@ -1,0 +1,9 @@
+<h1>Teacher</h1>
+
+<%= @teacher.inspect %>
+<br>
+<br>
+<br>
+<%= @teacher.type %>&nbsp;LOGGED IN -----<br>
+<%= @teacher.email %>&nbsp;LOGGED IN -----
+<%= link_to destroy_member_session_path, :method=>'delete' do %><i class="icon-warning-sign"></i> Logout<% end %>

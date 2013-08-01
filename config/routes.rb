@@ -1,4 +1,14 @@
 EduCee::Application.routes.draw do
+
+  resources :student
+  resources :teacher
+
+  get "home/index"
+
+  devise_for :members  #, :controllers => { :registrations => :registrations }
+
+  root :to => 'home#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,27 @@
+<h1>EDU-CEE</h1>
+<% if member_signed_in?  %>
+    <%= current_member.type %>&nbsp;LOGGED IN -----<br>
+    <%= current_member.email %>&nbsp;LOGGED IN -----
+<%= link_to destroy_member_session_path, :method=>'delete' do %><i class="icon-warning-sign"></i> Logout<% end %>
+<% else%>
+    NOT LOGGED IN
+    <h2>Sign in</h2>
+
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <div><%= f.label :email %><br />
+          <%= f.email_field :email, :autofocus => true %></div>
+
+        <div><%= f.label :password %><br />
+          <%= f.password_field :password %></div>
+
+        <% if devise_mapping.rememberable? -%>
+            <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+        <% end -%>
+
+        <div><%= f.submit "Sign in" %></div>
+    <% end %>
+           <br>
+           <br>
+    <%= render "devise/shared/links" %>
+
+<% end %>
