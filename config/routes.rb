@@ -10,9 +10,11 @@ EduCee::Application.routes.draw do
   resources :institution do
     member do
       get 'remove_teacher_from_institution'
+      get 'remove_student_from_institution'
     end
     collection do
       post 'add_teacher_to_institute'
+      post 'add_student_to_institute'
     end
   end
 

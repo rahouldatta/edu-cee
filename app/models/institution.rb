@@ -22,4 +22,13 @@ class Institution < ActiveRecord::Base
     names
   end
 
+  def self.get_available_student_info
+    students = Student.where(:institution_id => nil)
+    names = []
+    students.each do |t|
+      names << "#{t.first_name} #{t.last_name} (#{t.id})"
+    end
+    names
+  end
+
 end #class Institution

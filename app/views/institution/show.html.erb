@@ -1,8 +1,4 @@
 <h1>Institution, <%= "#{@institution.institution_name.titleize}"%></h1>
-
-<%= @institution.inspect%>
-<br>
-<br>
 <%= @institution.email %>&nbsp;LOGGED IN -----
 <br>
 <hr>
@@ -25,6 +21,29 @@ Add more teachers to your institute -
 <%= form_tag({:controller => "institution",:action => "add_teacher_to_institute"}) do %>
     <%= select_tag :teacher_name, options_for_select(Institution.get_available_teachers_info)%>
     <%= submit_tag "Add This Teacher"%>
+<% end %>
+
+<br>
+<hr>
+<br>
+<% if @students_enrolled.blank?%>
+    You have not enrolled any students into your institution yet.
+<% else %>
+    Students enrolled in your institute are -<br>
+    <% @students_enrolled.each do |t|%>
+        <%= "#{t.id}. #{t.first_name} #{t.last_name}"%>&nbsp;|&nbsp;
+        <%= link_to "Remove", remove_student_from_institution_institution_path(t), :confirm => "Are you sure you want to remove this student from your institution?"%><br>
+    <% end%>
+<% end%>
+
+
+<br>
+<br>
+
+Add more student to your institute -
+<%= form_tag({:controller => "institution",:action => "add_student_to_institute"}) do %>
+    <%= select_tag :student_name, options_for_select(Institution.get_available_student_info)%>
+    <%= submit_tag "Add This Student"%>
 <% end %>
 
 <br>

@@ -1,10 +1,10 @@
 <h1>Teacher, <%=  "#{@teacher.first_name} #{@teacher.last_name}"%></h1>
 
-<%= @teacher.inspect %>
-<br>
-<br>
 <br>
 <%= @teacher.email %>&nbsp;LOGGED IN -----
+<br>
+<br>
+
 <br>
 <% if @teacher.institution.nil?%>
     You do not belong to any institute. Please ask your institute to add you into their account.

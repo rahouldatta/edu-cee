@@ -6,6 +6,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/institution_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/institution_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/institution/show.html.erb" afterPath="$PROJECT_DIR$/app/views/institution/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/show.html.erb" afterPath="$PROJECT_DIR$/app/views/student/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/teacher/show.html.erb" afterPath="$PROJECT_DIR$/app/views/teacher/show.html.erb" />
     </list>
     <ignored path="edu-cee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,12 +23,12 @@
     <file path="/index.html.erb" changelist="0e85fb28-0c8a-4c4f-9b09-8c1f63575569" time="1375380312789" ignored="false" />
     <file path="/registrations_controller.rb" changelist="0e85fb28-0c8a-4c4f-9b09-8c1f63575569" time="1375369768925" ignored="false" />
     <file path="/application_controller.rb" changelist="0e85fb28-0c8a-4c4f-9b09-8c1f63575569" time="1375381177672" ignored="false" />
-    <file path="/routes.rb" changelist="0e85fb28-0c8a-4c4f-9b09-8c1f63575569" time="1375385593673" ignored="false" />
+    <file path="/routes.rb" changelist="0e85fb28-0c8a-4c4f-9b09-8c1f63575569" time="1375387409341" ignored="false" />
     <file path="/student_controller.rb" changelist="0e85fb28-0c8a-4c4f-9b09-8c1f63575569" time="1375375860862" ignored="false" />
-    <file path="/show.html.erb" changelist="0e85fb28-0c8a-4c4f-9b09-8c1f63575569" time="1375385832755" ignored="false" />
+    <file path="/show.html.erb" changelist="0e85fb28-0c8a-4c4f-9b09-8c1f63575569" time="1375387663446" ignored="false" />
     <file path="/teacher_controller.rb" changelist="0e85fb28-0c8a-4c4f-9b09-8c1f63575569" time="1375376511830" ignored="false" />
-    <file path="/institution.rb" changelist="0e85fb28-0c8a-4c4f-9b09-8c1f63575569" time="1375385493989" ignored="false" />
-    <file path="/institution_controller.rb" changelist="0e85fb28-0c8a-4c4f-9b09-8c1f63575569" time="1375385886059" ignored="false" />
+    <file path="/institution.rb" changelist="0e85fb28-0c8a-4c4f-9b09-8c1f63575569" time="1375387541194" ignored="false" />
+    <file path="/institution_controller.rb" changelist="0e85fb28-0c8a-4c4f-9b09-8c1f63575569" time="1375387458900" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,25 +78,25 @@
       <file leaf-file-name="institution.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/institution.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="56" selection-start="823" selection-end="823" vertical-scroll-proportion="0.0">
+            <state line="28" column="12" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/institution/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="27" selection-start="467" selection-end="467" vertical-scroll-proportion="-9.6">
+            <state line="44" column="94" selection-start="1593" selection-end="1593" vertical-scroll-proportion="0.83815026">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="institution_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="institution_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/institution_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="47" selection-start="557" selection-end="557" vertical-scroll-proportion="0.37260273">
+            <state line="24" column="33" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -103,7 +105,7 @@
       <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="11" selection-start="186" selection-end="217" vertical-scroll-proportion="0.0">
+            <state line="12" column="25" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -121,7 +123,7 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/teacher/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="18" selection-start="0" selection-end="511" vertical-scroll-proportion="-0.0">
+            <state line="6" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="-3.84">
               <folding />
             </state>
           </provider>
@@ -130,7 +132,7 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/student/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="42" selection-start="344" selection-end="344" vertical-scroll-proportion="-7.04">
+            <state line="6" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="-3.84">
               <folding />
             </state>
           </provider>
@@ -163,13 +165,13 @@
         <option value="$PROJECT_DIR$/app/models/teacher.rb" />
         <option value="$PROJECT_DIR$/app/models/student.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/member.rb" />
         <option value="$PROJECT_DIR$/app/views/teacher/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/student/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/member.rb" />
-        <option value="$PROJECT_DIR$/app/models/institution.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/institution/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/institution_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/institution.rb" />
+        <option value="$PROJECT_DIR$/app/views/institution/show.html.erb" />
       </list>
     </option>
   </component>
@@ -831,13 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="35" selection-start="1107" selection-end="1107" vertical-scroll-proportion="-19.2">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/examination.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="23" selection-start="244" selection-end="244" vertical-scroll-proportion="0.10958904">
@@ -866,20 +861,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/teacher/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="18" selection-start="0" selection-end="511" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/student/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="42" selection-start="344" selection-end="344" vertical-scroll-proportion="-7.04">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/teacher.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="25" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
@@ -901,30 +882,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/institution.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="56" selection-start="823" selection-end="823" vertical-scroll-proportion="0.0">
+        <state line="30" column="35" selection-start="1107" selection-end="1107" vertical-scroll-proportion="-19.2">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/student/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="-3.84">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="11" selection-start="186" selection-end="217" vertical-scroll-proportion="0.0">
+        <state line="12" column="25" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/institution/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/teacher/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="27" selection-start="467" selection-end="467" vertical-scroll-proportion="-9.6">
+        <state line="6" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="-3.84">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/institution.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="12" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/institution_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="47" selection-start="557" selection-end="557" vertical-scroll-proportion="0.37260273">
+        <state line="24" column="33" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/institution/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="94" selection-start="1593" selection-end="1593" vertical-scroll-proportion="0.83815026">
           <folding />
         </state>
       </provider>

@@ -4,6 +4,7 @@ class InstitutionController < ApplicationController
   def show
     @institution = current_institution
     @teacher_enrolled = Teacher.where(:institution_id => current_institution.id)
+    @students_enrolled = Student.where(:institution_id => current_institution.id)
   end
 
   def add_teacher_to_institute
@@ -18,4 +19,18 @@ class InstitutionController < ApplicationController
     t.update_attributes(:institution_id => nil)
     redirect_to :back
   end
+
+  def add_student_to_institute
+    id = params[:student_name]
+    t = Student.find(id.split("(").last.chop)
+    t.update_attributes(:institution_id => current_institution.id)
+    redirect_to :back
+  end
+
+  def remove_student_from_institution
+    t = Student.find(params[:id])
+    t.update_attributes(:institution_id => nil)
+    redirect_to :back
+  end
+
 end
