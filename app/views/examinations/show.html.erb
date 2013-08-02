@@ -1,30 +1,69 @@
+<h2>Examination for institution - <%= @examination.institution.institution_name.upcase %></h2>
+
 <p id="notice"><%= notice %></p>
+<% t = @examination.teacher%>
+This examination has been designed by - <%= "#{t.first_name.titleize} #{t.last_name.titleize}"%>
+<br>
+<br>
 
-<p>
-  <b>Institution:</b>
-  <%= @examination.institution_id %>
-</p>
-
-<p>
   <b>Subject:</b>
   <%= @examination.subject %>
-</p>
-
-<p>
   <b>Chapter:</b>
   <%= @examination.chapter %>
-</p>
-
-<p>
+<br>
   <b>Total marks:</b>
   <%= @examination.total_marks %>
-</p>
-
-<p>
   <b>Total time:</b>
   <%= @examination.total_time %>
-</p>
-
-
+<br>
+<br>
 <%= link_to 'Edit', edit_examination_path(@examination) %> |
 <%= link_to 'Back', teacher_path(current_member) %>
+
+<br>
+<hr>
+
+<% unless @questions.blank? %>
+    Questions added to the Examination are - (Please note the total marks of all questions must
+    be equal to the total marks provided by you.) Current total marks - <%= @total_marks %> out of <%= @examination.total_marks%><br><br>
+    <% @questions.each_with_index do |question,i| %>
+
+        <%="#{i+1}. #{question.question.first.capitalize}?"%><br>
+    <% end%>
+<% else %>
+    No questions have been added to the examination yet.
+<% end %>
+<br>
+<hr>
+<br>
+
+<%if @total_marks >= @examination.total_marks%>
+    All questions total upto the marks provided by you.
+<% else %>
+    Add questions to the examinations -
+    <br>
+    <br>
+    <div class="rect-box">
+    <%= form_tag({:controller => "examinations",:action => "add_question_to_examination"}) do %>
+        Question : <br>
+        <%= text_area(nil,:question, :rows => "2",:placeholder => "Required", :required => true) %><br>
+        Question in different format - 1 : <br><%= text_area(nil,:dw_1, :rows => "2", :placeholder => "Optional") %><br>
+        Question in different format - 2 :<br> <%= text_area(nil,:dw_2, :rows => "2", :placeholder => "Optional") %><br><br>
+        Answer Options : <br>
+        Correct Answer : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= text_field(nil,:correct_answer, :placeholder => "Correct Answer", :required => true) %><br>
+        Incorrect Answer 1 : <%= text_field(nil,:iq_1,:placeholder => "Incorrect Answer 1", :required => true) %><br>
+        Incorrect Answer 2 : <%= text_field(nil,:iq_2,:placeholder => "Incorrect Answer 2", :required => true) %><br>
+        Incorrect Answer 3 : <%= text_field(nil,:iq_3,:placeholder => "Incorrect Answer 3", :required => true) %><br>
+        <br>
+        <br>
+        Marks for this question : <%= select_tag :marks, options_for_select(["1","2","3","4","5","6"])%>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+        Difficulty Level : <%= select_tag :difficulty_level, options_for_select(["1","2","3","4","5"])%>
+        <br>
+        <br>
+          <%= hidden_field_tag :examination_id, @examination.id%>
+        <%= submit_tag "Add Question"%>
+    <% end %>
+    </div>
+<% end %>
+
+

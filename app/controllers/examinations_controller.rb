@@ -14,6 +14,9 @@ class ExaminationsController < ApplicationController
   # GET /examinations/1.json
   def show
     @examination = Examination.find(params[:id])
+    @questions = @examination.questions
+    @total_marks = 0
+    @questions.each {|q| @total_marks +=q.marks}
 
     respond_to do |format|
       format.html # show.html.erb
@@ -46,7 +49,7 @@ class ExaminationsController < ApplicationController
 
     respond_to do |format|
       if @examination.save
-        format.html { redirect_to examination_path(@examination), notice: 'Examination was successfully created.' }
+        format.html { redirect_to @examination, notice: 'Examination was successfully created.' }
         format.json { render json: @examination, status: :created, location: @examination }
       else
         format.html { render action: "new" }
@@ -82,4 +85,11 @@ class ExaminationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def add_question_to_examination
+    exam = Examination.find(params[:examination_id])
+    exam.questions.create(Question.make_creation_hash(params))
+    redirect_to :back
+  end
+
 end

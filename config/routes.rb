@@ -1,6 +1,10 @@
 EduCee::Application.routes.draw do
 
-  resources :examinations
+  resources :examinations do
+    collection do
+      post 'add_question_to_examination'
+    end
+  end
 
   devise_for :institutions
 
