@@ -12,6 +12,27 @@
     You belong to Institute - <%= @teacher.institution.institution_name %>
 <% end%>
 <br>
+<hr>
 <br>
+<% exams = @teacher.examinations rescue ""%>
+<% unless @teacher.institution_id.nil?%>
+    <% unless exams.blank? %>
+        You have created <%= exams.count %> tests for institute - <%= @teacher.institution.institution_name %>. <br>
+        Please click on the tests below to view or modify them.
+        <br>
+        <br>
+        <% exams.each do |e| %>
+            <%= link_to "#{e.standard}-#{e.subject}-#{e.chapter}", examination_path(e) %><br>
+        <% end %>
+
+ <% else %>
+        You have not created any tests yet.
+    <% end %>
+    <br>
+<%= link_to "Create Test", new_examination_path%>
+<br>
+<hr>
+<br>
+<% end %>
 
 <%= link_to destroy_member_session_path, :method=>'delete' do %><i class="icon-warning-sign"></i> Logout<% end %>

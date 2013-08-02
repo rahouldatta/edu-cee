@@ -1,6 +1,6 @@
 EduCee::Application.routes.draw do
 
-  get "institution/show"
+  resources :examinations
 
   devise_for :institutions
 

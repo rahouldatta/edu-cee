@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Institution:</b>
+  <%= @examination.institution_id %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @examination.subject %>
+</p>
+
+<p>
+  <b>Chapter:</b>
+  <%= @examination.chapter %>
+</p>
+
+<p>
+  <b>Total marks:</b>
+  <%= @examination.total_marks %>
+</p>
+
+<p>
+  <b>Total time:</b>
+  <%= @examination.total_time %>
+</p>
+
+
+<%= link_to 'Edit', edit_examination_path(@examination) %> |
+<%= link_to 'Back', teacher_path(current_member) %>

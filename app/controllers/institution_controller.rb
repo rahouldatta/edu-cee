@@ -9,8 +9,10 @@ class InstitutionController < ApplicationController
 
   def add_teacher_to_institute
     id = params[:teacher_name]
-    t = Teacher.find(id.split("(").last.chop)
-    t.update_attributes(:institution_id => current_institution.id)
+    unless id.nil?
+      t = Teacher.find(id.split("(").last.chop)
+      t.update_attributes(:institution_id => current_institution.id)
+    end
     redirect_to :back
   end
 
@@ -22,8 +24,10 @@ class InstitutionController < ApplicationController
 
   def add_student_to_institute
     id = params[:student_name]
-    t = Student.find(id.split("(").last.chop)
-    t.update_attributes(:institution_id => current_institution.id)
+    unless id.nil?
+      t = Student.find(id.split("(").last.chop)
+      t.update_attributes(:institution_id => current_institution.id)
+    end
     redirect_to :back
   end
 
