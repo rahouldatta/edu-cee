@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130802101424) do
+ActiveRecord::Schema.define(:version => 20130802153144) do
 
   create_table "examinations", :force => true do |t|
     t.integer  "institution_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20130802101424) do
     t.integer  "teacher_id"
     t.integer  "standard"
     t.integer  "difficulty_level"
+    t.boolean  "allow_test"
   end
 
   create_table "institutions", :force => true do |t|

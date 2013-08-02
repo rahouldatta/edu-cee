@@ -103,4 +103,16 @@ class ExaminationsController < ApplicationController
     redirect_to :back
   end
 
+  def publish_examination
+    e = Examination.find(params[:id])
+    e.update_attributes(:allow_test => true)
+    redirect_to :back
+  end
+
+  def halt_examination
+    e = Examination.find(params[:id])
+    e.update_attributes(:allow_test => false)
+    redirect_to :back
+  end
+
 end

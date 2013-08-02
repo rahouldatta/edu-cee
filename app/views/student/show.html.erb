@@ -9,9 +9,21 @@
 <% if @student.institution.nil?%>
     You do not belong to any institute. Please ask your institute to add you into their account.
 <% else %>
-    You belong to Institute - <%= @student.institution.institution_name %>
+    You belong to Institute - <%= @student.institution.institution_name %> in standard <%= @student.qualifications%>
 <% end%>
 <br>
+<hr>
+<br>
+<% unless @available_exams.blank? %>
+    Available exams for <%= @student.qualifications%> Standard are - <br><br>
+    <% @available_exams.each do |ae| %>
+        <%= "#{ae.subject}-#{ae.chapter} | Total Marks - #{ae.total_marks} | Time - #{ae.total_time} min" %><br>
+    <% end %>
+<% else %>
+    No exams are avaiable at the moment.
+<% end %>
+<br>
+<hr>
 <br>
 
 <%= link_to destroy_member_session_path, :method=>'delete' do %><i class="icon-warning-sign"></i> Logout<% end %>

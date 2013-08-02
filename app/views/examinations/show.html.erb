@@ -2,7 +2,7 @@
 
 <p id="notice"><%= notice %></p>
 <% t = @examination.teacher%>
-This examination has been designed by - <%= "#{t.first_name.titleize} #{t.last_name.titleize}"%>
+This examination has been designed by - <%= "#{t.first_name.titleize} #{t.last_name.titleize}"%> for standard - <%= @examination.standard%>
 <br>
 <br>
 
@@ -57,7 +57,13 @@ This examination has been designed by - <%= "#{t.first_name.titleize} #{t.last_n
 
 <%if @total_marks >= @examination.total_marks%>
     All question marks total upto the marks provided by you.
-    <button>Allow students to take exam.</button>
+    <% if @examination.allow_test.nil? or @examination.allow_test.inspect.eql? "false" %>
+        <%= link_to "Publish Exam (Students will be able to take the exam)", publish_examination_examination_path(@examination), :confirm => "Are you sure you want to publish this exam? Students will be able to take the test." %>
+    <% else %>
+        <br>[Test is published. Students can take the examination.]
+        <%= link_to "Halt Exam", halt_examination_examination_path(@examination), :confirm => "Are you sure you want to halt this exam? Students will not be able to take the test." %>
+    <% end %>
+
 <% else %>
     Add questions to the examinations -
     <br>

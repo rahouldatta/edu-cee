@@ -4,6 +4,8 @@ EduCee::Application.routes.draw do
     member do
       get 'question_details'
       get 'delete_question'
+      get 'publish_examination'
+      get 'halt_examination'
     end
     collection do
       post 'add_question_to_examination'
