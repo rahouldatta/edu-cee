@@ -3,6 +3,7 @@ EduCee::Application.routes.draw do
   resources :examinations do
     member do
       get 'question_details'
+      get 'delete_question'
     end
     collection do
       post 'add_question_to_examination'

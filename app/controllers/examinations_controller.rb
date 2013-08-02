@@ -97,4 +97,10 @@ class ExaminationsController < ApplicationController
     redirect_to :back
   end
 
+  def delete_question
+    q = Question.find(params[:id])
+    q.destroy
+    redirect_to :back
+  end
+
 end
