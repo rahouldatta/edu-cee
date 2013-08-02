@@ -13,7 +13,9 @@ class Question < ActiveRecord::Base
     question << params[:question]
     question << params[:dw_1] unless params[:dw_1].blank?
     question << params[:dw_2] unless params[:dw_2].blank?
-    incorrect_answers << 3.times {|i| params["iq_#{i+1}".to_sym]}
+    incorrect_answers << params[:iq_1]
+    incorrect_answers << params[:iq_2]
+    incorrect_answers << params[:iq_3]
     {:correct_answer => params[:correct_answer], :difficulty_level => params[:difficulty_level], :marks => params[:marks],
     :question => question, :incorrect_answers => incorrect_answers}
   end

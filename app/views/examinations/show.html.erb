@@ -26,10 +26,26 @@ This examination has been designed by - <%= "#{t.first_name.titleize} #{t.last_n
 <% unless @questions.blank? %>
     Questions added to the Examination are - (Please note the total marks of all questions must
     be equal to the total marks provided by you.) Current total marks - <%= @total_marks %> out of <%= @examination.total_marks%><br><br>
-    <% @questions.each_with_index do |question,i| %>
-
-        <%="#{i+1}. #{question.question.first.capitalize}?"%><br>
+    <table border=1 >
+      <tr>
+        <td>Q.No.</td>
+        <td>Question</td>
+        <td>Marks</td>
+        <td>Difficulty</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <% @questions.each_with_index do |question,i| %>
+      <tr>
+            <td><%= "#{i+1}." %></td>
+            <td><%="#{question.question.first.capitalize}?"%></td>
+            <td><%= question.marks%></td>
+            <td><%= question.difficulty_level%></td>
+            <td><%= link_to "Edit","#"%></td>
+            <td><%= link_to "View Details", question_details_examination_path(question)%></td>
+      </tr>
     <% end%>
+    </table>
 <% else %>
     No questions have been added to the examination yet.
 <% end %>

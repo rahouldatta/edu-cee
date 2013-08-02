@@ -1,0 +1,26 @@
+<h3>Question for exam - <%= "#{@examination.standard}-#{@examination.subject}-#{@examination.chapter}"%></h3>
+
+<br>
+<b>Questions:</b><br>
+<% @question.question.each_with_index do |q,i|%>
+    <%= "#{i+1}. #{q}" %><br>
+<% end %>
+<hr>
+<br>
+<b>Correct Answer: </b>&nbsp;
+<%= @question.correct_answer%><br><br>
+<b>InCorrect Answer:</b><br>
+<% @question.incorrect_answers.each_with_index do |ic,i|%>
+    <%= "#{i+1}. #{ic}"%><br>
+<%end %>
+<br>
+<b>Difficulty Level: </b>
+<%= @question.difficulty_level %>
+<br>
+<br>
+<b>Marks for this question: </b>
+<%= @question.marks %>
+<hr>
+<%= link_to "Edit", "#"%>&nbsp;|&nbsp;
+<%= link_to "Back", examination_path(@examination)%>
+

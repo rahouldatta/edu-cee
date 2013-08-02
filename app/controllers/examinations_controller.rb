@@ -86,6 +86,11 @@ class ExaminationsController < ApplicationController
     end
   end
 
+  def question_details
+    @question = Question.find(params[:id])
+    @examination = @question.examination
+  end
+
   def add_question_to_examination
     exam = Examination.find(params[:examination_id])
     exam.questions.create(Question.make_creation_hash(params))
