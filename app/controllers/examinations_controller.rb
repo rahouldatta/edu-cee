@@ -37,7 +37,7 @@ class ExaminationsController < ApplicationController
 
   # GET /examinations/1/edit
   def edit
-    @examination = Examination.find(params[:id])
+    @examination = Examination.find(params[:id]) if member_signed_in?
   end
 
   # POST /examinations
@@ -99,6 +99,8 @@ class ExaminationsController < ApplicationController
 
   def delete_question
     q = Question.find(params[:id])
+    e = q.examination
+    e.update_attributes(:allow_test => false) if e.allow_test == true
     q.destroy
     redirect_to :back
   end

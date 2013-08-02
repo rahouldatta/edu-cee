@@ -5,6 +5,7 @@ class InstitutionController < ApplicationController
     @institution = current_institution
     @teacher_enrolled = Teacher.where(:institution_id => current_institution.id)
     @students_enrolled = Student.where(:institution_id => current_institution.id)
+    @examinations = @institution.examinations.order(:standard).group_by(&:standard)
   end
 
   def add_teacher_to_institute

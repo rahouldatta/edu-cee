@@ -49,6 +49,23 @@ Add more student to your institute -
 <br>
 <hr>
 <br>
+<div class="rect-box">
+    <% unless @examinations.blank? %>
+        The examinations existing for this Institute are -
+        <% @examinations.each do |s,exams| %>
+          <hr>
+          <%= "Tests available for standard - #{s}" %><br>
+          <% exams.each do |exam|%>
+            <%= link_to "#{s}-#{exam.subject}-#{exam.chapter} | Marks : #{exam.total_marks} | Time : #{exam.total_time}min", examination_path(exam) %><br>
+        <% end %>
+        <% end %>
+    <% else %>
+        No tests have been created by the teachers. Please ask teachers to log in from their account and craete examinations
+    <% end %>
+</div>
+<br>
+<hr>
+<br>
 <%= link_to destroy_member_session_path, :method=>'delete' do %><i class="icon-warning-sign"></i> Logout<% end %>
 
 
